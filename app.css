@@ -1,13 +1,12 @@
-      body {
-        background-color: tan;
-        margin-left: 20%;   
-        margin-right: 20%;
-        border: 1px dotted gray;
-        padding: 10px 10px 10px 10px; 
-        font-family: sans-serif;
-      }
+body {
+  background-color: tan;
+  margin-left: 20%;   
+  margin-right: 20%;
+  border: 1px dotted gray;
+  padding: 10px 10px 10px 10px; 
+  font-family: sans-serif;
+}
       
-.hideme
-{
-display: none;
+.hideme {
+  display: none;
 }      
