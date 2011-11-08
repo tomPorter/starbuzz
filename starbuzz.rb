@@ -1,6 +1,6 @@
 require "rubygems"
 require "sinatra"
 get '/' do
-  @foo = 'Starbuzz Coffee Beverages for Tom Porter'
+  @foo = 'Tom Porter'
   haml :index
 end
