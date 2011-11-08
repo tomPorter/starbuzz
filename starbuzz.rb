@@ -17,6 +17,7 @@ end
 get '/' do
   #@foo = 'for Tom Porter'
   @foo = ''
-  @drinks = Drink.get(:order => [ :id ], :limit => 20)
+  #@drinks = Drink.get(:order => [ :id ], :limit => 20)
+  @drinks = Drink.all
   haml :index
 end
