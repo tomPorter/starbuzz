@@ -1,2 +1,2 @@
-require "./starbuzz"
+require './starbuzz'
 run Sinatra::Application
