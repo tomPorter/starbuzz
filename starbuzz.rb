@@ -1,5 +1,11 @@
-require "rubygems"
-require "sinatra"
+require 'rubygems'
+require 'sinatra'
+require 'data_mapper'
+DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/mydatabase.db")
+Dir["#{File.dirname(__FILE__)}/models/*.rb"].each { |model| require model }
+# automatically create the Drink table
+Drink.auto_migrate! unless Drink.storage_exists?
+
 def gen_entries
   entries = []
   entries << {name:'House Blend',price:'$1.49',description:'A smooth, mild blend of coffees from Mexico, Bolivia and Guatemala.'}
@@ -9,7 +15,8 @@ def gen_entries
   entries
 end
 get '/' do
-  @foo = 'for Tom Porter'
-  @bar = gen_entries
+  #@foo = 'for Tom Porter'
+  @foo = ''
+  @drinks = Drink.get(:order => [ :id ], :limit => 20)
   haml :index
 end
