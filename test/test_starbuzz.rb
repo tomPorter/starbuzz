@@ -17,4 +17,9 @@ class MyAppTest < Test::Unit::TestCase
     assert last_response.body.include?('Starbuzz Coffee Beverages'), "Did not find Starbuzz"
   end
 
+  def test_foo_inclusion
+    get '/'
+    assert last_response.body.include?('Tom Porter'), "Did not find Tom Porter"
+  end
+
 end
