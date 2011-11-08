@@ -1,8 +1,7 @@
 #!/usr/local/bin/ruby
-curr_dir =  File.expand_path(File.dirname(__FILE__))
 require 'test/unit'
 require 'rack/test'
-require curr_dir+'/../starbuzz.rb'
+require_relative '../starbuzz.rb'
 ENV['RACK_ENV'] = 'test'
 
 class MyAppTest < Test::Unit::TestCase
