@@ -9,7 +9,7 @@ def gen_entries
   entries
 end
 get '/' do
-  @foo = 'Tom Porter'
+  @foo = 'for Tom Porter'
   @bar = gen_entries
   haml :index
 end

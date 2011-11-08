@@ -11,15 +11,18 @@ class MyAppTest < Test::Unit::TestCase
     Sinatra::Application
   end
 
-  def test_my_default
+  def test_header
     get '/'
     assert last_response.ok?
     assert last_response.body.include?('Starbuzz Coffee Beverages'), "Did not find Starbuzz"
   end
 
-  def test_foo_inclusion
+  def test_entries
     get '/'
-    assert last_response.body.include?('Tom Porter'), "Did not find Tom Porter"
+    assert last_response.ok?
+    ['House Blend','Mocha Cafe Latte','Cappucino','Chai Tea'].each do |name|
+      assert last_response.body.include?(name), "Did not find #{name}"
+    end  
   end
 
 end

@@ -1,6 +1,7 @@
+!!!
 %link(rel="stylesheet" type="text/css" href="app.css")
 #content
-  %h1="Starbuzz Coffee Beverages for #{@foo}"
+  %h1="Starbuzz Coffee Beverages #{@foo}"
   -@bar.each do |entry|
     %h2="#{entry[:name]}, #{entry[:price]}"
     %p="#{entry[:description]}"
