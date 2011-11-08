@@ -2,9 +2,11 @@
 %link(rel="stylesheet" type="text/css" href="app.css")
 #content
   %h1="Starbuzz Coffee Beverages #{@foo}"
-  -@drinks.each do |drink|
-    %h2="#{drink.name}, #{drink.price}"
-    %p="#{drink.description}"
+  .drinks
+    -@drinks.each do |drink|
+      %div{:id => "entry-#{drink.id}"}
+        %h2="#{drink.name}, #{drink.price}"
+        %p="#{drink.description}"
   .hideme
     %h3 Beverage#list_static
     %p 
