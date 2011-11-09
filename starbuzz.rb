@@ -16,3 +16,10 @@ get '/' do
   @drinks = Drink.all
   haml :index
 end
+
+get '/:id' do
+  #@foo = 'for Tom Porter'
+  @foo = ''
+  @drinks = Drink.all(:id => params[:id])
+  haml :index
+end
