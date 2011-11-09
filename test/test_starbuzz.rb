@@ -34,4 +34,10 @@ class MyAppTest < Test::Unit::TestCase
     assert !last_response.body.include?(bad_name), "Found #{bad_name}"
   end
 
+  def test_id_not_found
+    get '/5'
+    assert last_response.ok?, 'Cound not fetch "/5"'
+    assert last_response.body.include?("Could not find drink entry"), "NO Missing ID page."
+  end
+
 end

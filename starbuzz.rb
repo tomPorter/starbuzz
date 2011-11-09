@@ -20,6 +20,11 @@ end
 get '/:id' do
   #@foo = 'for Tom Porter'
   @foo = ''
-  @drinks = Drink.all(:id => params[:id])
-  haml :index
+  @id = params[:id]
+  @drinks = Drink.all(:id => @id)
+  if @drinks.size == 0
+    haml :id_not_found
+  else
+    haml :index
+  end
 end
