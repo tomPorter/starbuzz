@@ -1,18 +1,5 @@
-!!!
-%head
-  %title Starbuzz Coffee
-%body
-  %link(rel="stylesheet" type="text/css" href="app.css")
-  #content
-    %h1="Starbuzz Coffee Beverages #{@foo}"
-    .drinks
-      -@drinks.each do |drink|
-        %div{:id => "entry-#{drink.id}"}
-          %h2="#{drink.name}, #{drink.price}"
-          %p="#{drink.description}"
-    .hideme
-      %h3 Beverage#list_static
-      %p 
-        %em Find me in app/views/beverage/list_static.rhtml
-  
-  
+.drinks
+  -@drinks.each do |drink|
+    %div{:id => "entry-#{drink.id}"}
+      %h2="#{drink.name}, #{drink.price}"
+      %p="#{drink.description}"
