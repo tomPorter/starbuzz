@@ -1,5 +1,5 @@
 body {
-  background-color: tan;
+  background-color: #d2b48c;
   margin-left: 20%;   
   margin-right: 20%;
   border: 1px dotted gray;
@@ -8,7 +8,7 @@ body {
 }
       
 .error {
-  background-color: tan;
+  background-color: #d2b48c;
   color: red;
 }      
       

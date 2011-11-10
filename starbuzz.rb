@@ -17,6 +17,11 @@ get '/' do
   haml :index
 end
 
+get '/mission' do
+  title = "Starbuzz Coffee Mission"
+  haml :mission, :locals => {:title => title}
+end
+
 get '/:id' do
   #@foo = 'for Tom Porter'
   @foo = ''
