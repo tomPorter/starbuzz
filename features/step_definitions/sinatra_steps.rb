@@ -5,7 +5,7 @@ end
 Then /^I should see "([^\"]*)"$/ do |text|
   response_body.should =~ Regexp.new(Regexp.escape(text))
 end
-Then /^There should be hidden text "([^\"]*)"$/ do |text|
+Then /^there should be hidden text "([^\"]*)"$/ do |text|
   #response_body.should have_selector('.hideme',:content => text)
   response.body.should have_selector("#content") do |content|
     content.should have_selector('.hideme') do |hidden|
