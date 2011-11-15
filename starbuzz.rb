@@ -10,11 +10,13 @@ Dir["#{File.dirname(__FILE__)}/models/*.rb"].each do |model|
   end
 end
 
-get '/' do
-  #@foo = 'for Tom Porter'
-  @foo = ''
-  @drinks = Drink.all
-  haml :index
+['/','/index','/index.html'].each do |pattern|
+  get pattern do
+    #@foo = 'for Tom Porter'
+    @foo = ''
+    @drinks = Drink.all
+    haml :index
+  end
 end
 
 get '/mission' do
