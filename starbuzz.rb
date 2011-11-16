@@ -26,6 +26,15 @@ get '/mission' do
   haml :mission, :locals => {:title => title}
 end
 
+#get %r{/rb(.*)} do
+get %r{/rb} do
+  #"""request.fullpath #{request.fullpath}<br>
+  #request.params #{request.params}<br>
+  #request.query_string #{request.query_string}<br>
+  #params #{params}"""
+  title = "Starbuzz Coffee Really Big"
+  haml :rb, :locals => {:title => title}
+end
 get '/:id' do
   #@foo = 'for Tom Porter'
   @foo = ''
