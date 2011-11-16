@@ -2,6 +2,8 @@ require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
 require 'haml'
+set :static, true
+#set :public 
 DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/mydatabase.db")
 Dir["#{File.dirname(__FILE__)}/models/*.rb"].each do |model| 
   require model 
