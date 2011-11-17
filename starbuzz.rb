@@ -2,6 +2,17 @@ require 'rubygems'
 require 'sinatra'
 require 'data_mapper'
 require 'haml'
+
+
+## >> Write helper/wrapper to return a given number of random
+## >> lorem paragraphs.
+## require 'lorem'
+## n = 12 # only 12 paras avail from lorem
+## x = Lorem::Base.new(:paragraphs,n).output
+## paras = x.split("\n\n")
+## Now have to pick random paragraphs out of the 12 returned.
+## wrap para's in <p> tags
+
 set :static, true
 #set :public 
 DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/mydatabase.db")
